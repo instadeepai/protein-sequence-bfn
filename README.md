@@ -11,11 +11,11 @@ Welcome to the inference code for the paper ["Protein Sequence Modelling with Ba
 
 One of the benefits of defining such a process in probability parameter space is that it can be applied to *any* family of distributions with continous-valued parameters. This means that BFNs can be directly applied to discrete data, allowing for diffusion-like generative modelling for sequences without restrictive left-to-right inductive biases or relying on discrete-time stochastic processes. The main focus of our work is to investigate the application of BFNs to *protein sequences*, as represented by a sequence of amino acids. The ProtBFN methodology is broadly summarised below:
 
-![An overview of ProtBFN.](BFN_overview.png)
+![An overview of ProtBFN.](figures/BFN_overview.png)
 
 Having trained ProtBFN, we find that it is exceptionally performant at unconditional generation of de novo protein sequences. For example, we find that we are able to rediscover a variety of structural motifs, according to structures predicted by ESMFold, with high sequence novelty:
 
-![Cath hits for ProtBFN.](cath_s40_proteins.png)
+![Cath hits for ProtBFN.](figures/cath_s40_proteins.png)
 
 ## :rocket: Getting Started
 
@@ -66,7 +66,7 @@ GAGPAPDGATAAAPTDPTTLADG
 
 You can render individual generated proteins using tools such as the [ESMFold web API](https://esmatlas.com/resources?action=fold). For example, we can see that the first protein generated above is a high confidence complex structure:
 
-![ESMFold result of a generated protein.](example_protein.png)
+![ESMFold result of a generated protein.](figures/example_protein.png)
 
 There are a variety of commandline arguments that you can use to modify the sampling behaviour. These are passed through the `RUN_ARGS` argument. For example:
 
