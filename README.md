@@ -5,7 +5,7 @@
 
 Welcome to the inference code for the paper ["Protein Sequence Modelling with Bayesian Flow Networks"](https://www.biorxiv.org/content/10.1101/2024.09.24.614734v1). With this code, you can sample from our trained models ProtBFN, for general proteins, and AbBFN, for antibody VH chains. 
 
-## Overview
+## :wave: Overview
 
 [Bayesian Flow Networks](https://arxiv.org/abs/2308.07037) are a new approach to generative modelling, and can be viewed as an extension of diffusion models to the parameter space of probability distributions. They define a continuous-time process that maps between a naive prior distribution and a psuedo-deterministic posterior distribution for each variable independently. By training our neural network to 'denoise' the current posterior, by taking into account mutual information between variables, we implicitly minimise a variational lower bound. We can then use our trained neural network to generate samples from the learned distribution.
 
@@ -17,7 +17,7 @@ Having trained ProtBFN, we find that it is exceptionally performant at unconditi
 
 ![Cath hits for ProtBFN.](cath_s40_proteins.png)
 
-## Getting Started
+## :rocket: Getting Started
 
 To get started, you need to modify `Makefile` to use your accelerator. For example, if you are using a GPU, you would modify the `Makefile`:
 
@@ -27,17 +27,17 @@ ACCELERATOR = GPU
 
 You can choose between CPU, TPU and GPU accelerators. Please note that multi-host inference is not supported by this code release, and you should therefore restrict your hardware usage to single-host settings. Once you have configured your accelerator, simply run
 
-```bash
+```text
 > make build
 ```
 
 to build the `protbfn` docker image. We typically find that this step takes 5-20 minutes to run, depending on your hardware. 
 
-## Sample De-novo Proteins with ProtBFN and AbBFN
+## :atom: Sample De-novo Proteins with ProtBFN and AbBFN
 
 Sampling is performed with the `sample.py` script. We've included a shortcut command in `Makefile` that let's you run `sample.py` through the docker image that you have just built, with run arguments appropriate for your chosen accelerator. To run sampling, simply call:
 
-```bash
+```text
 > make sample
 ```
 
@@ -70,7 +70,7 @@ You can render individual generated proteins using tools such as the [ESMFold we
 
 There are a variety of commandline arguments that you can use to modify the sampling behaviour. These are passed through the `RUN_ARGS` argument. For example:
 
-```bash
+```text
 # Sample the ProtBFN model
 > make sample RUN_ARGS="--model ProtBFN"  
 # Sample the AbBFN model
@@ -83,7 +83,7 @@ There are a variety of commandline arguments that you can use to modify the samp
 
 For a complete usage, simply run:
 
-```bash
+```text
 > make sample RUN_ARGS="--help"
 
 usage: sample.py [-h] [--model MODEL] [--num_steps NUM_STEPS] [--seed SEED]
@@ -119,17 +119,17 @@ optional arguments:
 
 In particular, if your model parameters ever get corrupted, for example through an interrupted download, you can forceably reset them through the `--force_reload` parameters:
 
-```bash
+```text
 # Run sampling with the AbBFN model and forceably reload the model parameters
 make sample RUN_ARGS="--model AbBFN --force_reload"
 ```
 
 
-## Inpaint Antibody VH chains
+## :art: Inpaint Antibody VH chains
 
 Inpainting is performed with the `inpaint.py` script. As with sampling, we've included a shortcut command in `Makefile` that let's you run `sample.py` through the docker image that you have just built, with run arguments appropriate for your chosen accelerator. To run inpainting, simply call:
 
-```bash
+```text
 > make inpaint
 ```
 
@@ -151,7 +151,7 @@ PSLKSRVTISVDTSKSQFSVKLSSVTAADTAVYYCDIWGQGTMVTV
 
 You can see inpainting behaviour in detail by passing the `--verbose` parameter:
 
-```bash 
+```text 
 > make inpaint RUN_ARGS="--verbose"
 
 Model weights for AbBFN already downloaded and stored in parameters/AbBFN
@@ -194,13 +194,13 @@ Where `AAR` refers to the Amino Acid Recovery rate, a key statistic reported in 
 
 Note that in the paper, we used a substantially more expensive regime, with 1024 particles:
 
-```bash
+```text
 make inpaint RUN_ARGS="--num_particles 1024"
 ```
 
 For a complete usage, simply run:
 
-```bash
+```text
 > make inpaint RUN_ARGS="--help"
 usage: inpaint.py [-h] [--model MODEL] [--force_reload] [--seed SEED]
                   [--num_steps NUM_STEPS] [--num_particles NUM_PARTICLES]
@@ -239,7 +239,7 @@ CDR1, CDR2, CDR3, FR1, FR2, FR3, FR4
 
 The last axis refers to the position in the chain, padded to the length of the longest sequence in the fasta file, with `1` denoting that a residue belongs to the region of interest. That is, `numbering[13, 1, :]` will yield a vector where all positions corresponding to cdr2 for the 14th sequence are `1`.
 
-## Cite our work
+## 🤝 Cite our work
 
 If you have used ProtBFN or AbBFN in your work, you can cite us using the following bibtex entry:
 
