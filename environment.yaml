@@ -1,0 +1,18 @@
+name: protbfn
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - pip
+  - python-dotenv=0.21
+  - pip:
+    - --find-links https://storage.googleapis.com/jax-releases/libtpu_releases.html
+    - --find-links https://storage.googleapis.com/jax-releases/jax_releases.html
+    - Bio
+    - dm-haiku==0.0.9
+    - jax==0.4.13
+    - jaxlib==0.4.13
+    - flax==0.7.2
+    - fsspec==2023.9.2
+    - numpy==1.24
+
