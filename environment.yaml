@@ -8,7 +8,7 @@ dependencies:
   - pip:
     - --find-links https://storage.googleapis.com/jax-releases/libtpu_releases.html
     - --find-links https://storage.googleapis.com/jax-releases/jax_releases.html
-    - Bio
+    - biopython==1.84
     - dm-haiku==0.0.9
     - jax==0.4.13
     - jaxlib==0.4.13
