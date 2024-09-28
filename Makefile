@@ -1,5 +1,5 @@
 #################
-# CPU, TPU or GPU. If you enter an incorret option, it will default to CPU-only
+# CPU, TPU or GPU. If you enter an incorrect option, it will default to CPU-only
 ACCELERATOR = TPU
 
 # variables
