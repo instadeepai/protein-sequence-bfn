@@ -117,10 +117,10 @@ optional arguments:
 
 ```
 
-In particular, if your model parameters ever get corrupted, for example through an interrupted download, you can forceably reset them through the `--force_reload` parameters:
+In particular, if your model parameters ever get corrupted, for example through an interrupted download, you can forcibly reset them through the `--force_reload` parameters:
 
 ```text
-# Run sampling with the AbBFN model and forceably reload the model parameters
+# Run sampling with the AbBFN model and forcibly reload the model parameters
 make sample RUN_ARGS="--model AbBFN --force_reload"
 ```
 
