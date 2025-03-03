@@ -1,4 +1,6 @@
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+[![DOI](https://zenodo.org/badge/861751712.svg)](https://doi.org/10.5281/zenodo.14962051)
+
 
 
 # Protein Sequence Modelling with Bayesian Flow Networks
